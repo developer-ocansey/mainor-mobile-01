@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simplecalculator/Transactions.dart';
 import 'package:simplecalculator/index.dart';
+import 'package:simplecalculator/dbHandler.dart';
 
 void main() => runApp(new App());
 
