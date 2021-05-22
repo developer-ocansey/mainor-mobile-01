@@ -2,36 +2,23 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:simplecalculator/history.dart';
-import 'package:simplecalculator/transactions.dart';
 
-import 'dbHandler.dart';
+import 'history.dart';
 
 class IndexPage extends StatefulWidget {
-  IndexPage({Key key, this.title}) : super(key: key);
+  IndexPage({Key key, this.title, this.services}) : super(key: key);
 
   final String title;
+  final services;
 
   @override
   _IndexPage createState() => new _IndexPage();
 }
 
 class _IndexPage extends State<IndexPage> {
-  DatabaseHandler handler;
-
   @override
   void initState() {
     super.initState();
-    this.handler = DatabaseHandler();
-    this.handler.initializeDB().whenComplete(() async {
-      await this.addOperation;
-      setState(() {});
-    });
-  }
-
-  Future<int> addOperation(operation) async {
-    Transactions input = Transactions(operation: operation, timestamp: 24);
-    return await this.handler.insert(input);
   }
 
   String output = "0";
@@ -89,8 +76,8 @@ class _IndexPage extends State<IndexPage> {
     }
     setState(() {
       output = double.parse(_output).toStringAsFixed(2);
-      output = double.parse(_output).toStringAsFixed(2);
     });
+    service.saveOperation(output);
   }
 
   Widget Button(String buttonText) {
@@ -136,9 +123,10 @@ class _IndexPage extends State<IndexPage> {
             decoration: BoxDecoration(color: Colors.black),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => History()));
               },
-              child: Text('Go back!'),
+              child: Text('History'),
             ),
           ),
         ]),
