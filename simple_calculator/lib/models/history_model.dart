@@ -2,7 +2,7 @@
 
 class History {
   final String cid;
-  final String operation;
+  String operation;
   final String timeStamp;
 
   History({this.cid, this.operation, this.timeStamp});
