@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "841222310512",
+    "project_id": "firecalculator-f623c",
+    "storage_bucket": "firecalculator-f623c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841222310512:android:d22fffe00c50efc7e2c2b5",
+        "android_client_info": {
+          "package_name": "com.example.simplecalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841222310512-333ahilnl267gej7ecgnut9uj4j86jm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsWbtFAbQV0U8IZhBAlfp5igel--alN34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841222310512-333ahilnl267gej7ecgnut9uj4j86jm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
